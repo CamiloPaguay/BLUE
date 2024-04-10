@@ -54,11 +54,11 @@ global.imagen7 = fs.readFileSync('./AhoraQue.png');
 global.imagen8 = fs.readFileSync('./Que.jpg');
 
 //• ↳ ◜𝑳𝑰𝑵𝑲𝑺◞ • 🌿
-global.gp1 = 'https://whatsapp.com/channel/0029VaahTuq1yT2H09LVe60W' //Grupo Oficial De SakuraBot
+global.gp1 = 'https://chat.whatsapp.com/HCwHgbB4GiQDQ4vmrxdjCC' //Grupo Oficial De SakuraBot
 
-global.gp2 = 'https://whatsapp.com/channel/0029VaahTuq1yT2H09LVe60W' //CuriosityBot Y SakuraBot
+global.gp2 = 'https://chat.whatsapp.com/HCwHgbB4GiQDQ4vmrxdjCC' //CuriosityBot Y SakuraBot
 
-global.gp3 = 'https://whatsapp.com/channel/0029VaahTuq1yT2H09LVe60W' //NovaBot Y SakuraBot
+global.gp3 = 'https://chat.whatsapp.com/HCwHgbB4GiQDQ4vmrxdjCC' //NovaBot Y SakuraBot
 
 global.channel = 'https://whatsapp.com/channel/0029VaahTuq1yT2H09LVe60W' //Canal Oficial
 
