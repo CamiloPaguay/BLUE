@@ -1,34 +1,38 @@
-const cooldowns = {};
+import fetch from 'node-fetch';
+const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
+  try {
+  if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
-const handler = async (m, { conn, text, isROwner, isOwner }) => {
-  const userId = m.sender; // Obtiene el ID del remitente del mensaje
+  const date = d.toLocaleDateString(locale, {day: 'numeric', month: 'long', year: 'numeric'});
+  const {money, joincount} = global.db.data.users[m.sender];
+
+ const rtotalreg = Object.values(global.db.data.users).filter((user) => user.registered == true).length;
+    const rtotal = Object.entries(global.db.data.users).length || '0'
+        const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
+  const {exp, limit, level, role} = global.db.data.users[m.sender];
+  const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png');
+  let fkon = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+    //await conn.reply(m.chat, '*ꪹ͜𓂃͡𝗖𝗮𝗿𝗴𝗮𝗻𝗱𝗼 𝗘𝗹 𝗠𝗲𝗻𝘂 𝗗𝗲𝗹 𝗕𝗼𝘁...𓏲੭*', fkon, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: '👋 ¡𝗛𝗼𝗹𝗮!', body: '𝖲𝖺𝗄𝗎𝗋𝖺𝖡𝗈𝗍𝖫𝗂𝗍𝖾-𝖬𝖣 🌹🌻', sourceUrl: global.yt, thumbnail: await (await fetch(pp)).buffer() }}})
+//m.react('📍');
+    await conn.sendMessage(m.chat, { react: { text: '🚀', key: m.key } })
+  let txt =`🔮 𝙈𝘼𝙔-𝘽𝙊𝙏 🔮
+
+  📌 *Hola,* ${taguser}
+
+  📊 _*< TUS ESTADÍSTICAS />*_
   
-  // Verifica si el usuario está en el registro de enfriamiento y si ha pasado el tiempo de enfriamiento
-  if (cooldowns[userId] && cooldowns[userId] > Date.now()) {
-    const remainingTime = (cooldowns[userId] - Date.now()) / 1000;
-    m.reply(`Debes esperar ${remainingTime.toFixed(1)} segundos antes de volver a usar este comando.`);
-    return;
-  }
-  
-  // Registra el momento actual más el tiempo de enfriamiento (por ejemplo, 1 minuto)
-  cooldowns[userId] = Date.now() + 60000; // 1 minuto de enfriamiento
-  
-  if (text) {
-    global.db.data.chats[m.chat].sBloquescrim = text; // Guarda el texto personalizado en la base de datos
-    m.reply('*[❗] El mensaje se ha configurado correctamente. Por favor, espera un minuto antes de volver a usar este comando.*');
-  } else {
-    const sBloquescrim = global.db.data.chats[m.chat].sBloquescrim; // Obtiene el texto personalizado de la base de datos
-    if (sBloquescrim) {
-      m.reply(sBloquescrim); // Envía el mensaje personalizado si está configurado
-    } else {
-      m.reply('*[❗] No se ha configurado un mensaje para Bloquescrim.*');
-    }
+  🎟️ •  *Tokens:* ${joincount}
+  🎖️ •  *Nivel:* ${level}
+  💰 •  *MayCoins:* ${money}
+  📈 •  *Experiencia:* ${exp}`;
+   await conn.sendMessage(m.chat, {text: txt.trim(), mentions: [...txt.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [...txt.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": '🌹⸽⃕  𝕾𝖆𝖐𝖚𝖗𝖆 - 𝕭𝖔𝖙 - 𝕷𝖎𝖙𝖊 - 𝕸𝕯 🌸⸽⃕✰', "containsAutoReply": true, "mediaType": 1, "thumbnail": imagen6, "mediaUrl": global.gp1, "sourceUrl": global.gp1}}}, {quoted: fkon});
+ // m.react('🧩');
+  } catch {
+    conn.reply(m.chat, '🧸 *Ocurrió Un Error*', m);
   }
 };
-
-handler.help = ['.bloquescrim <texto>', '.bloquescrim'];
-handler.tags = ['group'];
-handler.command = ['bloquescrim'];
-handler.admin = true;
-
+handler.help = ['menu'];
+handler.tags = ['menu'];
+handler.command = /^(permenu|permenú|perallmenu|perhelp|peramenucompleto)$/i;
+handler.register = true
 export default handler;
