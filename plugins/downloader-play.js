@@ -33,10 +33,6 @@ const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 🔗• *Enlace:*
 > • ${yt_play[0].url}
 
-👑 𝘼𝙐𝙏𝙊𝙍:
-> • ${yt_play[0].author.name}
-
-
 *[ ℹ️ ] Se está enviando el ${additionalText}. espere...*` .trim();
         conn.sendMessage(m.chat, {image: {url: yt_play[0].thumbnail}, caption: texto1}, {quoted: m});
     if (command == 'play') {
