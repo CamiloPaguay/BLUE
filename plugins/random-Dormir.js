@@ -2,12 +2,12 @@ const handler = async (m, {conn, text, command}) => {
   const yh = global.loli;
   const url = yh[Math.floor(Math.random() * yh.length)];
   const mensajes = [
-    'Descansa, mañana será un mejor día',
-    'Que tengas un buen descanso',
-    'Espero que tengas dulces sueños',
-    'Descansa y recarga energías para mañana',
-    'Que tengas un reparador descanso',
-    'Buenas noches, que descanses',
+    '_*Descansa, mañana será un mejor día*_',
+    '_*Que tengas un buen descanso*_',
+    '_*Espero que tengas dulces sueños*_',
+    '_*Descansa y recarga energías para mañana*_',
+    '_*Que tengas un reparador descanso*_',
+    '_*Buenas noches, que descanses*_',
   ];
   const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
   conn.sendMessage(m.chat, {image: {url: url}, caption: mensaje}, {quoted: m});
