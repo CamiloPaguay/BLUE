@@ -1566,7 +1566,7 @@ global.dfail = (type, m, conn) => {
     restrict: '*!Esta Función Fué Deshabilitado Por Mi Desarrollador*',
     }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
-  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '𝙈𝙖𝙮-𝘽𝙤𝙩', body: '𝙀𝙡 𝙢𝙚𝙟𝙤𝙧 𝘽𝙤𝙩 𝙙𝙚 𝙒𝙝𝙖𝙩𝙨𝘼𝙥𝙥', thumbnail: imagen6, sourceUrl: 'https://chat.whatsapp.com/HCwHgbB4GiQDQ4vmrxdjCC'}}}}, aa);
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '𝙈𝙖𝙮-𝘽𝙤𝙩', body: '𝙀𝙡 𝙢𝙚𝙟𝙤𝙧 𝘽𝙤𝙩 𝙙𝙚 𝙒𝙝𝙖𝙩𝙨𝘼𝙥𝙥', thumbnail: imagen6, sourceUrl: 'https://whatsapp.com/channel/0029VaahTuq1yT2H09LVe60W'}}}}, aa);
   if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
