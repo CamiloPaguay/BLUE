@@ -12,14 +12,25 @@ const handler = async (m, {conn, text, command}) => {
   const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
   conn.sendMessage(m.chat, {image: {url: url}, caption: mensaje}, {quoted: m});
 };
-handler.command = /^(dormir)$/i;
+handler.command = /^(dormir|Dormir|Mimir|mimir|sueño)$/i;
 handler.tags = ['dormir'];
 handler.help = ['dormir'];
 export default handler;
 
 global.loli = [
-  'https://i.pinimg.com/736x/cf/7d/74/cf7d741fecb5e2c6abe1b9b237b30b04.jpg',
-  'https://i.pinimg.com/736x/b5/b2/62/b5b2620e392e74139487c209c3b03dc2.jpg',
-  'https://i.pinimg.com/280x280_RS/dc/6e/53/dc6e53b48dd3de659bd43257056147a6.jpg',
-  'https://i.pinimg.com/originals/cd/ef/fc/cdeffc0bf155fe2c8c63561b437c6864.jpg',
+  'https://i.ibb.co/PZvZgnd/Whats-App-Image-2024-02-18-at-5-11-51-PM-1.jpg',
+  'https://i.ibb.co/gJx2Fvx/Whats-App-Image-2024-02-18-at-5-11-51-PM-2.jpg',
+  'https://i.ibb.co/Yk9QjtR/Whats-App-Image-2024-02-18-at-5-11-51-PM-3.jpg',
+  'https://i.ibb.co/frCwjry/Whats-App-Image-2024-02-18-at-5-11-51-PM.jpg',
+  'https://i.ibb.co/WgqjWJT/Whats-App-Image-2024-02-18-at-5-11-52-PM-1.jpg',
+  'https://i.ibb.co/CW8yNhF/Whats-App-Image-2024-02-18-at-5-11-52-PM-3.jpg',
+  'https://i.ibb.co/4NkxtJ1/Whats-App-Image-2024-02-18-at-5-11-52-PM.jpg',
+  'https://i.ibb.co/wyCWw0w/Whats-App-Image-2024-02-18-at-5-11-53-PM-3.jpg',
+  'https://i.ibb.co/1GQgqVr/Whats-App-Image-2024-02-18-at-5-11-53-PM-4.jpg',
+  'https://i.ibb.co/n05tNqk/Whats-App-Image-2024-02-18-at-5-11-53-PM.jpg',
+  'https://i.ibb.co/x3d0fDc/Whats-App-Image-2024-04-10-at-6-29-49-PM-1.jpg',
+  'https://i.ibb.co/KbZyB4t/Whats-App-Image-2024-04-10-at-6-29-49-PM.jpg',
+  'https://i.ibb.co/gJx2Fvx/Whats-App-Image-2024-02-18-at-5-11-51-PM-2.jpg',
+  'https://i.ibb.co/WPrH0bB/Whats-App-Image-2024-04-10-at-6-29-50-PM-1.jpg',
+  'https://i.ibb.co/Ld4QbtK/Whats-App-Image-2024-04-10-at-6-29-50-PM-2.jpg',
 ];
