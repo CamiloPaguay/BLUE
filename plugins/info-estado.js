@@ -6,16 +6,32 @@ const handler = async (m, {conn}) => {
     const uptime = clockString(_uptime);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
     await conn.sendMessage(m.chat, { react: { text: '🤠', key: m.key } })
-    const str = `┏✧ » ◇ « ✧ » ✦ « ✧ » ◇ « ✧
-┃⍣ 𝙎𝙖𝙠𝙪𝙧𝙖𝘽𝙤𝙩𝙇𝙞𝙩𝙚-𝙈𝘿✨️🌻
-┃
-┃⍣👋🏻𝘏𝘰𝘭𝘢: ${taguser}
-┃
-┃⍣ *ꨄ︎ ⏳️ 𝘈𝘤𝘵𝘪𝘷𝘰:* ${uptime}
-┃⍣ *ꨄ︎ ✅ 𝘉𝘰𝘵 𝘜𝘴𝘰 𝘗𝘶𝘣𝘭𝘪𝘤𝘰*
-┃⍣ *ꨄ︎ 🦁 𝘖𝘸𝘯𝘦𝘳: Diego*
-┃⍣ *ꨄ︎ 🔗 𝘊𝘶𝘦𝘯𝘵𝘢𝘴 𝘖𝘧𝘤:* https://atom.bio/sakuralite
-╰✧ » ◇ « ✧ » ✦ « ✧ » ◇ « ✧`.trim();
+    const str = `           _*INFO - ESTADO*_
+
+👥•  _*Propi:*_ ANNA Y CAMILO
+📞•  _*WA:*_ +573239900113
+💳•  _*PayPal:*_ www.paypal.me/camildaza  
+https://www.paypal.me/MayGarcia772
+
+🏓•  _*Ping:*_ ${rtime}
+⏱️•  _*Uptime:*_ ${uptime}
+⚙️•  _*Prefijo:*_ ${usedPrefix}
+🔒•  _*Modo:*_ ${self ? "privado" : "público"}
+👤•  _*Usuarios regs:*_ ${totalusrReg}
+👥•  _*Usuarios totales:*_ ${totalusr}
+🤖•  _*Tipo de bot:*_ ${(conn.user.jid == global.conn.user.jid ? '' : `Sub-bot de:\n ▢ +${global.conn.user.jid.split`@`[0]}`) || 'No es sub-bot'}
+ 
+💬•  _*Chats privados:*_ ${chats.length - groups.length}
+👥•  _*Grupos:*_ ${groups.length}
+💬•  _*Chats totales:*_ ${chats.length}
+ 
+👀•  _*Autoread:*_ ${autoread ? "activo" : "desactivado"}
+🔒•  _*Restrict:*_ ${restrict ? "activo" : "desactivado"}
+💻•  _*Pconly:*_ ${pconly ? "activado" : "desactivado"}
+👥•  _*Gponly:*_ ${gconly ? "activado" : "desactivado"}
+🔒•  _*AntiPrivado:*_ ${antiprivado ? "activado" : "desactivado"}
+📵•  _*AntiLlamada:*_ ${antiCall ? "activado" : "desactivado"}
+🤖•  _*ModeJadiBot:*_ ${modejadibot ? "activado" : "desactivado"}`.trim();
     if (m.isGroup) {
       conn.sendMessage(m.chat, {text: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": global.titulowm, "containsAutoReply": true, "mediaType": 1, "thumbnail": pp, "mediaUrl": `https://atom.bio/sakuralite`, "sourceUrl": `https://atom.bio/sakuralite`}}}, {quoted: m});
     } else {
