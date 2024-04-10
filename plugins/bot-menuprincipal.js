@@ -455,6 +455,6 @@ _*< 👑 PROPIETARIO Y MODS. />*_
 };
 handler.help = ['menu'];
 handler.tags = ['menu'];
-handler.command = /^(permenu|permenú|perallmenu|perhelp|peramenucompleto)$/i;
+handler.command = /^(menu|menú|allmenu|help|menucompleto)$/i;
 handler.register = true
 export default handler;
