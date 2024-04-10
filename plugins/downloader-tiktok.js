@@ -17,10 +17,7 @@ await conn.sendMessage(m.chat, {text: `${waitttt}`, edit: key})
 
 try {
 let p = await fg.tiktok(args[0])
-let te = `𝆺𝅥𝅮 🔥 _Nombre:_ ${p.nickname}
-𝆺𝅥𝅮 👤 _Usuario:_ ${p.unique_id}
-𝆺𝅥𝅮 ⏰ _Duración:_ ${p.duration}
-𝆺𝅥𝅮 📄 _Descripción:_ ${p.description}`
+let te = `_*DESCARGAS - TIKTOK*_ 🎧\n\n*[ 💡 ] Responde a este vídeo con el comando* _.tomp3_ *para convertirlo en audio.*`
 conn.sendFile(m.chat, p.play, 'tiktok.mp4', te, m)
 } catch {
 try {
