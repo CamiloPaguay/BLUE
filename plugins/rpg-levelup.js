@@ -29,7 +29,7 @@ const handler = async (m, {conn}) => {
 *📍Nivel Actual:*
 *${user.level}*
 
-Mienstra Mas Uses *SakuraBotLite-MD* Tu Nivel Subirá Mas Rapido🥀📍
+Mienstra Mas Uses *May-MD* Tu Nivel Subirá Mas Rapido🥀📍
 `.trim();
     try {
       const img = await levelup(teks, user.level);
